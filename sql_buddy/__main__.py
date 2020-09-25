@@ -4,6 +4,8 @@ import argparse
 import sqlite3
 import csv
 
+from importlib import resources
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -14,17 +16,17 @@ from prompt_toolkit.lexers import PygmentsLexer
 from prompt_toolkit.styles import Style
 from pygments.lexers.sql import SqlLexer
 
-from concept import Base, Concept
-from create_objects import create_concepts
+from sql_buddy.concept import Base, Concept
+from sql_buddy.create_objects import create_concepts
 
-from sql_resources import sql_completer, style
+from sql_buddy.sql_resources import sql_completer, style
 
 def get_args():
 	parser = argparse.ArgumentParser(description='Look up SQL queries and concepts like index cards for study purposes')
 	parser.add_argument(
 		'-o',
 		'--on',
-		help='Bolean flag for pure SQL REPL mode',
+		help='Boolean flag for pure SQL REPL mode',
 		action='store_true'
 	)
 	return parser.parse_args()
@@ -127,7 +129,7 @@ def main():
 		""")
 		connection.commit()
 
-		with open('tx_deathrow_full.csv', 'r') as f:
+		with resources.open_text('sql_buddy', 'tx_deathrow_full.csv') as f:
 			reader = csv.reader(f)
 			next(reader)
 			for row in reader:

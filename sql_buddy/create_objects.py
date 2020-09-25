@@ -1,4 +1,4 @@
-from concept import Concept
+from sql_buddy.concept import Concept
 
 
 # Create an instances of Concept
