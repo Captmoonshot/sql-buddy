@@ -23,7 +23,7 @@ setup(
     ],
     packages=["sql_buddy"],
     include_package_data=True,
-    install_requires=["prompt-toolkit", "pygments", "sqlalchemy", "sqlalchemy-utils"],
+    install_requires=["prompt_toolkit", "pygments", "sqlalchemy", "sqlalchemy-utils"],
     entry_points={
         "console_scripts": [
             "sql_buddy=sql_buddy.__main__:main",
