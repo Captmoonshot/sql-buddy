@@ -8,7 +8,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
 	name="sql-buddy",
-    version="1.0.3",
+    version="1.0.4",
     description="SQL study aid for the command line built with Python",
     long_description=README,
     long_description_content_type="text/markdown",
