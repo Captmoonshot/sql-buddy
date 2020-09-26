@@ -4,7 +4,7 @@ Sql-buddy is a study aid for SQL fundamentals that you can run on the terminal. 
 
 ## Installation
 
-You can install sql-buddy with pip:
+You can install sql-buddy with pip: [PYPI](https://pypi.org/project/sql-buddy/)
 
     pip install sql-buddy
 
